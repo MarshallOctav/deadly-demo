@@ -13,6 +13,9 @@ import appCss from "../styles.css?url";
 import { CartProvider } from "../lib/cart";
 import { Toaster } from "@/components/ui/sonner";
 
+const siteUrl = "https://deadly-demo.vercel.app";
+const previewImageUrl = `${siteUrl}/preview.png`;
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -81,17 +84,31 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Deadly Store - Jual, Beli & Rental Akun Game Premium" },
       { name: "description", content: "Deadly Store - katalog produk game premium dengan pemesanan langsung ke WhatsApp." },
       { name: "author", content: "Deadly Store" },
+      { name: "theme-color", content: "#f5457b" },
+      { property: "og:site_name", content: "Deadly Store" },
+      { property: "og:url", content: siteUrl },
       { property: "og:title", content: "Deadly Store - Jual, Beli & Rental Akun Game Premium" },
       { property: "og:description", content: "Platform jual, beli, dan rental akun game premium." },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: previewImageUrl },
+      { property: "og:image:secure_url", content: previewImageUrl },
+      { property: "og:image:type", content: "image/png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "798" },
+      { property: "og:image:alt", content: "Deadly Store preview" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@deadly_store25" },
+      { name: "twitter:title", content: "Deadly Store - Jual, Beli & Rental Akun Game Premium" },
+      { name: "twitter:description", content: "Platform jual, beli, dan rental akun game premium." },
+      { name: "twitter:image", content: previewImageUrl },
+      { name: "twitter:image:alt", content: "Deadly Store preview" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
+      { rel: "canonical", href: siteUrl },
       { rel: "icon", href: "/logo.jpeg", type: "image/jpeg" },
       { rel: "apple-touch-icon", href: "/logo.jpeg" },
     ],
